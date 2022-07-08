@@ -1,4 +1,4 @@
-package com.gausslab.websockettest;
+package com.gausslab.websockettest.ui;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.gausslab.websockettest.databinding.ObjectChatmessageBinding;
+import com.gausslab.websockettest.model.ChatMessage;
 
 import java.util.Date;
 import java.util.List;
@@ -41,6 +42,7 @@ public class ChatMessageRecyclerViewAdapter extends RecyclerView.Adapter<ChatMes
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         public final TextView tv_senderName;
         public final TextView tv_sendDate;
         public final TextView tv_messageContent;

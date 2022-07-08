@@ -1,8 +1,11 @@
-package com.gausslab.websockettest;
+package com.gausslab.websockettest.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.gausslab.websockettest.R;
+import com.gausslab.websockettest.repository.ChatMessageRepository;
 
 public class MainActivity extends AppCompatActivity {
 

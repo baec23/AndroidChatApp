@@ -1,4 +1,7 @@
-package com.gausslab.websockettest;
+package com.gausslab.websockettest.model;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class ChatMessage {
 
@@ -22,5 +25,11 @@ public class ChatMessage {
 
     public String getMessageContent() {
         return messageContent;
+    }
+
+    public String toJson(){
+        GsonBuilder builder = new GsonBuilder();
+        Gson gson = builder.create();
+        return gson.toJson(this);
     }
 }

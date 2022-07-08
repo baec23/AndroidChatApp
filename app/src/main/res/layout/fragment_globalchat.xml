@@ -12,12 +12,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/divider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/object_chatmessage"/>
+        tools:listitem="@layout/object_chatmessage" />
 
     <EditText
         android:id="@+id/globalChat_et_messageInput"
@@ -29,6 +29,7 @@
         android:ems="10"
         android:lines="2"
         android:maxLines="2"
+        android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/globalChat_bt_submitMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,9 +53,41 @@
         android:layout_height="2dp"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="8dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/globalChat_et_messageInput"
+        app:layout_constraintBottom_toTopOf="@+id/globalChat_tv_usernameLabel"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/globalChat_tv_usernameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display Name"
+        app:layout_constraintBottom_toTopOf="@+id/globalChat_et_username"
+        app:layout_constraintStart_toStartOf="@+id/globalChat_et_username" />
+
+    <EditText
+        android:id="@+id/globalChat_et_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="4dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/globalChat_tv_messageLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/globalChat_tv_messageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Message"
+        app:layout_constraintBottom_toTopOf="@+id/globalChat_et_messageInput"
+        app:layout_constraintStart_toStartOf="@+id/globalChat_et_messageInput" />
 </androidx.constraintlayout.widget.ConstraintLayout>

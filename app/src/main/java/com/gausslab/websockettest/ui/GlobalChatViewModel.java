@@ -1,7 +1,10 @@
-package com.gausslab.websockettest;
+package com.gausslab.websockettest.ui;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.gausslab.websockettest.model.ChatMessage;
+import com.gausslab.websockettest.repository.ChatMessageRepository;
 
 import java.util.List;
 
@@ -16,6 +19,11 @@ public class GlobalChatViewModel extends ViewModel {
     public List<ChatMessage> getMessages()
     {
         return chatMessageRepository.getChatMessages();
+    }
+
+    public LiveData<Boolean> isDoneLoading()
+    {
+        return chatMessageRepository.isDoneLoading();
     }
 
     public LiveData<Boolean> isMessagesUpdated()

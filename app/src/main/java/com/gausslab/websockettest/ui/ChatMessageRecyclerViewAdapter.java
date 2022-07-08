@@ -9,8 +9,10 @@ import android.widget.TextView;
 import com.gausslab.websockettest.databinding.ObjectChatmessageBinding;
 import com.gausslab.websockettest.model.ChatMessage;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 
 public class ChatMessageRecyclerViewAdapter extends RecyclerView.Adapter<ChatMessageRecyclerViewAdapter.ViewHolder> {
@@ -32,7 +34,10 @@ public class ChatMessageRecyclerViewAdapter extends RecyclerView.Adapter<ChatMes
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.chatMessage = messages.get(position);
         holder.tv_senderName.setText(holder.chatMessage.getSenderName());
-        holder.tv_sendDate.setText(new Date(holder.chatMessage.getSendTimestamp()).toString());
+        String pattern = "K:mm:ss a";
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern, Locale.getDefault());
+        String dateString = simpleDateFormat.format(new Date(holder.chatMessage.getSendTimestamp()));
+        holder.tv_sendDate.setText(dateString);
         holder.tv_messageContent.setText(holder.chatMessage.getMessageContent());
     }
 
